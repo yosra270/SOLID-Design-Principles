@@ -32,7 +32,7 @@ This code implements basic examples of the SOLID object oriented design principl
 - *Immobility*: We're unable to reuse modules from other projects or within the same project because those modules have lots of dependencies.
 - *Viscosity*: When code changes are needed, developers will prefer the easier route even if they break existing design.
 
-  Antipatterns and improper understanding of design principles can lead to ***STUPID*** code: ***Singleton***, ***Tight Coupling***, ***Untestability***, ***Premature Optimization***, ***Indescriptive Naming***, and ***Duplication***. SOLID can help developers stay clear of these.
+Antipatterns and improper understanding of design principles can lead to ***STUPID*** code: ***Singleton***, ***Tight Coupling***, ***Untestability***, ***Premature Optimization***, ***Indescriptive Naming***, and ***Duplication***. SOLID can help developers stay clear of these.
 
 The SOLID principles were developed by Robert C. Martin in a 2000 essay, “Design Principles and Design Patterns,” although the acronym was coined later by Michael Feathers.
 
