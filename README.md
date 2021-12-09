@@ -23,32 +23,32 @@ This code implements basic examples of the SOLID object oriented design principl
 ## Why SOLID ?
 What problems are solved or avoided by applying SOLID?
 
-"To create understandable, readable, and testable code that many developers can collaboratively work on."
+> "Create understandable, readable, and testable code that many developers can collaboratively work on."
 
 Software may start with a clean and elegant design but over time they become hard to maintain, often requiring costly redesigns. Robert Martin, who's credited with writing down the SOLID principles, points out some symptoms of rotting design due to improperly managed dependencies across modules:
 
-Rigidity: Implementing even a small change is difficult since it's likely to translate into a cascade of changes.
-Fragility: Any change tends to break the software in many places, even in areas not conceptually related to the change.
-Immobility: We're unable to reuse modules from other projects or within the same project because those modules have lots of dependencies.
-Viscosity: When code changes are needed, developers will prefer the easier route even if they break existing design.
+- *Rigidity*: Implementing even a small change is difficult since it's likely to translate into a cascade of changes.
+- *Fragility*: Any change tends to break the software in many places, even in areas not conceptually related to the change.
+- *Immobility*: We're unable to reuse modules from other projects or within the same project because those modules have lots of dependencies.
+- *Viscosity*: When code changes are needed, developers will prefer the easier route even if they break existing design.
 
-Antipatterns and improper understanding of design principles can lead to STUPID code: Singleton, Tight Coupling, Untestability, Premature Optimization, Indescriptive Naming, and Duplication. SOLID can help developers stay clear of these.
+Antipatterns and improper understanding of design principles can lead to ***STUPID*** code: ***Singleton***, ***Tight Coupling***, ***Untestability***, ***Premature Optimization***, ***Indescriptive Naming***, and ***Duplication***. SOLID can help developers stay clear of these.
 
 The SOLID principles were developed by Robert C. Martin in a 2000 essay, “Design Principles and Design Patterns,” although the acronym was coined later by Michael Feathers.
 
 The broad goal of the SOLID principles is to reduce dependencies so that engineers change one area of software without impacting others. Additionally, they’re intended to make designs easier to understand, maintain, and extend. Ultimately, using these design principles makes it easier for software engineers to avoid issues and to build adaptive, effective, and agile software.
-
+<p>
 While the principles come with many benefits, following the principles generally leads to writing longer and more complex code. This means that it can extend the design process and make development a little more difficult. However, this extra time and effort is well worth it because it makes software so much easier to maintain, test, and extend.
-
+</p>
 Following these principles is not a cure-all and won’t avoid design issues. That said, the principles have become popular because when followed correctly, they lead to better code for readability, maintainability, design patterns, and testability. In the current environment, all developers should know and utilize these principles.
 
 SOLID stands for:
 
-S - Single-responsiblity Principle (SRP)
-O - Open-closed Principle (OCP)
-L - Liskov Substitution Principle (LSP)
-I - Interface Segregation Principle (ISP)
-D - Dependency Inversion Principle (DIP)
+- **S** - Single-responsiblity Principle (**SRP**)
+- **O** - Open-closed Principle (**OCP**)
+- **L** - Liskov Substitution Principle (**LSP**)
+- **I** - Interface Segregation Principle (**ISP**)
+- **D** - Dependency Inversion Principle (**DIP**)
 
 
 While these concepts may seem daunting, they can be easily understood with some simple code examples. In this code, we'll take a deep dive into these principles, with a quick Java example to illustrate each one.
