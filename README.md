@@ -8,7 +8,7 @@
    <img height=350 src="https://miro.medium.com/max/1000/1*F_KLJBLZPJlPsZACHmgfCA.png">
 </p>
 
-This code implements basic examples of the SOLID Object Oriented Design Principles.
+This code implements basic examples of the SOLID object oriented design principles.
 
 
    - [Why S.O.L.I.D. ?](#why-solid)
@@ -17,6 +17,8 @@ This code implements basic examples of the SOLID Object Oriented Design Principl
    - [Liskov Substitution Principle](#liskov-substitution-principle)
    - [Interface Segregation Principle](#interface-segregation-principle)
    - [Dependency Inversion Principle](#dependency-inversion-principle)
+
+
 
 
 ## Why SOLID ?
