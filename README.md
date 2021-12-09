@@ -2,3 +2,5 @@
 <h1 align="center">
    SOLID Design Principles
 </h1>
+
+<img align="center" src="https://miro.medium.com/max/2000/1*EO-1GzcdEcaeDlMiP1btmg.jpeg">
