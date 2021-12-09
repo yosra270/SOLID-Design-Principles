@@ -1,4 +1,4 @@
-<h3 color="red">
+<h3 style="color: #225566">
 TP n° 1 en Qualité Logicielle : 
 </h3>
 <h1 align="center">
