@@ -21,7 +21,7 @@ This code implements basic examples of the SOLID object oriented design principl
 <br/>
 
 ## Why SOLID ?
-#####What problems are solved or avoided by applying SOLID?
+##### What problems are solved or avoided by applying SOLID?
 
 > "Create understandable, readable, and testable code that many developers can collaboratively work on."
 
