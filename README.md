@@ -5,5 +5,5 @@
 </h1>
 
 <p align="center">
-   <img height=450 src="https://miro.medium.com/max/2000/1*EO-1GzcdEcaeDlMiP1btmg.jpeg">
+   <img height=450 src="https://miro.medium.com/max/1000/1*F_KLJBLZPJlPsZACHmgfCA.png">
 </p>
