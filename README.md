@@ -21,7 +21,7 @@ This code implements basic examples of the SOLID object oriented design principl
 <br/>
 
 ## Why SOLID ?
-What problems are solved or avoided by applying SOLID?
+#####What problems are solved or avoided by applying SOLID?
 
 > "Create understandable, readable, and testable code that many developers can collaboratively work on."
 
@@ -37,9 +37,9 @@ Antipatterns and improper understanding of design principles can lead to ***STUP
 The SOLID principles were developed by Robert C. Martin in a 2000 essay, “Design Principles and Design Patterns,” although the acronym was coined later by Michael Feathers.
 
 The broad goal of the SOLID principles is to reduce dependencies so that engineers change one area of software without impacting others. Additionally, they’re intended to make designs easier to understand, maintain, and extend. Ultimately, using these design principles makes it easier for software engineers to avoid issues and to build adaptive, effective, and agile software.
-<p>
+
 While the principles come with many benefits, following the principles generally leads to writing longer and more complex code. This means that it can extend the design process and make development a little more difficult. However, this extra time and effort is well worth it because it makes software so much easier to maintain, test, and extend.
-</p>
+
 Following these principles is not a cure-all and won’t avoid design issues. That said, the principles have become popular because when followed correctly, they lead to better code for readability, maintainability, design patterns, and testability. In the current environment, all developers should know and utilize these principles.
 
 SOLID stands for:
