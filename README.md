@@ -3,4 +3,4 @@
    SOLID Design Principles
 </h1>
 
-<img align="center" height=800 src="https://miro.medium.com/max/2000/1*EO-1GzcdEcaeDlMiP1btmg.jpeg">
+<img align="center" height=500 src="https://miro.medium.com/max/2000/1*EO-1GzcdEcaeDlMiP1btmg.jpeg">
