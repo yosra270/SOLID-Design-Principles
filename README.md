@@ -18,7 +18,7 @@ This code implements basic examples of the SOLID object oriented design principl
    - [Interface Segregation Principle](#interface-segregation-principle)
    - [Dependency Inversion Principle](#dependency-inversion-principle)
 
-
+<br/> <br/> <br/>
 
 
 ## Why SOLID ?
