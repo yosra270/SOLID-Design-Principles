@@ -23,7 +23,7 @@ This code implements basic examples of the SOLID object oriented design principl
 ## Why SOLID ?
 #### What problems are solved or avoided by applying SOLID?
 
-> "Create understandable, readable, and testable code that many developers can collaboratively work on."
+> "SOLID aims at creating understandable, readable, and testable code that many developers can collaboratively work on."
 <br/>
   Software may start with a clean and elegant design but over time they become hard to maintain, often requiring costly redesigns. Robert Martin, who's credited with writing down the SOLID principles, points out some symptoms of rotting design due to improperly managed dependencies across modules:
 
