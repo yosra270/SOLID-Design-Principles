@@ -80,6 +80,21 @@ First, we will be dealing with an employee class that takes care of defining an 
 Then, we will see a car manager class that takes car of retreaving cars data, formatting those data and analyzing them (rating cars). Therefore, we delegated each job to a new class : CarDao for retreaving the data, CarFormatter fro formatting them and CarAnalyzer fro analyzing those data. So, now the only job that is left for the CarManager is to orchestrate what the others classes do by calling their methods.
 
 ## Open Closed Principle
+
+The Open-Closed Principle states :
+
+> “Software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification.”
+
+The general idea of this principle tells you to write your code so that you will be able to *add new functionality without changing the existing code*. That prevents situations in which a change to one of your classes also requires you to ***adapt all depending classes***. To achieve this goal, one should to use inheritance :
+
+> “A class is closed, since it may be compiled, stored in a library, baselined, and used by client classes. But it is also open, since any new class may use it as parent, adding new features. When a descendant class is defined, there is no need to change the original or to disturb its clients.”
+
+But since inheritance introduces *tight coupling* if the subclasses depend on implementation details of their parent class, the Open/Closed Principle has been redefined to the Polymorphic Open/Closed Principle. It uses *interfaces instead of superclasses* to allow different implementations which one can easily substitute without changing the code that uses them. The interfaces are closed for modifications, and one can provide new implementations to extend the functionality of your software.
+
+The main benefit of this approach is that an interface introduces an additional level of abstraction which enables loose coupling. The implementations of an interface are independent of each other and don’t need to share any code. If one consider it beneficial that two implementations of an interface share some code, it would be possible either to use inheritance or composition.
+
+To illustrate the application of this principle, we will be looking at the code of a simple
+
 ## Liskov Substitution Principle
 ## Interface Segregation Principle
 ## Dependency Inversion Principle
