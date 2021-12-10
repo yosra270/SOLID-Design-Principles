@@ -54,6 +54,27 @@ SOLID stands for:
   While these concepts may seem daunting, they can be easily understood with some simple code examples. In this code, we'll take a deep dive into these principles, with a quick Java example to illustrate each one.
 
 ## Single Responsibility Principle
+
+Single-responsibility Principle (***SRP***) states:
+
+> A class should **do one thing** and therefore it should have only a **single reason to change**.
+
+
+Following the Single Responsibility Principle is important. First of all, because many different teams can work on the same project and edit the same class for different reasons, this could lead to incompatible modules.
+
+Second, it makes version control easier. For example, say we have a persistence class that handles database operations, and we see a change in that file in the GitHub commits. By following the SRP, we will know that it is related to storage or database-related stuff.
+
+Merge conflicts are another example. They appear when different teams change the same file. But if the SRP is followed, fewer conflicts will appear – files will have a single reason to change, and conflicts that do exist will be easier to resolve.
+
+Other benefits may include :
+
+- Testing – A class with one responsibility will have far fewer test cases.
+- Lower coupling – Less functionality in a single class will have fewer dependencies.
+- Organization – Smaller, well-organized classes are easier to search than monolithic ones.
+
+
+To illustrate the application of this principle, we will be looking at the code of a simple smarthouse program as an example.
+
 ## Open Closed Principle
 ## Liskov Substitution Principle
 ## Interface Segregation Principle
