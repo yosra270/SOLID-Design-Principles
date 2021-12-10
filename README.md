@@ -73,7 +73,11 @@ Other benefits may include :
 - Organization – Smaller, well-organized classes are easier to search than monolithic ones.
 
 
-To illustrate the application of this principle, we will be looking at the code of a simple smarthouse program as an example.
+To illustrate the application of this principle, we will be looking at the code of a simple car management program as well as an employee displaying program as examples. 
+
+First, we will be dealing with an employee class that takes care of defining an employee properties as well as converting them to an HTML format. Having more than one job, this class breaks the SRP which leads us to delegate the formatting job to another class say the EmployeeFormatter class.
+
+Then, we will see a car manager class that takes car of retreaving cars data, formatting those data and analyzing them (rating cars). Therefore, we delegated each job to a new class : CarDao for retreaving the data, CarFormatter fro formatting them and CarAnalyzer fro analyzing those data. So, now the only job that is left for the CarManager is to orchestrate what the others classes do by calling their methods.
 
 ## Open Closed Principle
 ## Liskov Substitution Principle
