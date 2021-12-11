@@ -51,6 +51,9 @@ SOLID stands for:
 - **D** - Dependency Inversion Principle (**DIP**)
 
 <br/>
+<p align="center">
+   <img height=450 src="https://devopedia.org/images/article/177/8101.1558682601.png">
+</p>
   While these concepts may seem daunting, they can be easily understood with some simple code examples. In this code, we'll take a deep dive into these principles, with a quick Java example to illustrate each one.
 
 ## Single Responsibility Principle
