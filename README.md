@@ -99,9 +99,13 @@ The main benefit of this approach is that an interface introduces an additional 
 **To illustrate the application of this principle, we will be looking at the code of a simple shapes' area calculation and resource allocation programs as examples.**
 
 **First, we will be dealing with an Area Calculator whose job is to calculate the area of shapes. For now, it can only calculate the area of the shapes of types provided in the enum ShapeType. So whenever we need for the project to support new types of shape, we will need to break the code of the ShapeType enum as well as the code of the AreaCalculator class which might result in potential bugs and therefore breaking the application.**
+
 **To fix the issue of breaking the OCP, we will delegate the job of calculating the area of each shape to the shape itself so all what the AreaCalculator has to do is to call the shape's calculting area method. This way, whenever we want to expand the project to support new shapes types, we won't have to change the existing code, we will just extend it.**
 
+
+
 **Then, we will see a Resource Allocator that allocate and free the resources available in ResourceType enum (time slot and space slot). As the previous example, expanding the project to support new resources will result in changing the existing code of the ResourceType enum and the ResourceAllocator class. This might result in potential bugs breaking the application.**
+
 **To fix this, we apply the OCP principle by delegating the details of allocating and freeing slots to resources themselves. So, all what has the ResourceAllocator to do is to call for the resource methods.**
 
 ## Liskov Substitution Principle
@@ -127,7 +131,9 @@ Following this principle helps to avoid unexpected consequences of changes and a
 
 **First, we will be dealing with a Rectangle class that has width and height and calculte its area (= width x height). Next, we will be adding a square class. Since a basic mathematical reasoning would state that a square is a particular form of  rectangle where width equals height, the Square class will extend the Rectangle class and whenever we modify the width or the height we update both of them to the same value. This last property of the square will break the LSP. For example, a rectangle of width 5 and height 4 will have always an area of 20. In the hand, a square of width 5 and height 4 will have an area of 25 or 16 depending on which property we updated last. Which is a weird behavior of the square since it is a rectangle. To fix this issue, we remove the inheritance.**
 
-**Then, we will see a Duck class that always quacks and swims whenever the corresponding methods are called. Next, we add asubclass of the Duck class which is Electronic Duck class that can be Off or On and quacks and swims only when it is on. With that been said, if the electronic duck was off and its quack or swim methods were called, an excpetion will be thrown which is a weird behavior of a Duck since it is expected to always be capable of swimming and quacking. To fix the violation of the LSP, we add an IDuck interface that has the swim and quack methods throwing an exception. In others words, an IDuck can or not swim and quack. Therfore, both Duck and ElenctronicDuck classes will be implementing this interface.**
+**Then, we will see a Duck class that always quacks and swims whenever the corresponding methods are called. Next, we add asubclass of the Duck class which is Electronic Duck class that can be Off or On and quacks and swims only when it is on. With that been said, if the electronic duck was off and its quack or swim methods were called, an excpetion will be thrown which is a weird behavior of a Duck since it is expected to always be capable of swimming and quacking.**
+
+**To fix the violation of the LSP, we add an IDuck interface that has the swim and quack methods throwing an exception. In others words, an IDuck can or not swim and quack. Therfore, both Duck and ElenctronicDuck classes will be implementing this interface.**
 
 ## Interface Segregation Principle
 
@@ -142,9 +148,11 @@ Similar to the Single Responsibility Principle, the goal of the Interface Segreg
 **To illustrate this princple, we will be looking at a simple factory workers program as well as a basic doors management program as examples.**
 
 **First, we will be dealing with a general-purpose interface Worker that provides the methods of working and eating. The available workers in this project are humans and robots. So both Human and Robot classes will be implementing the interface Worker. This means that the Robot will have to provide an implementation for the eat method that it does not need.**
+
 **To fix this, we apply the ISP by segregating the general-interface Worker into two client-specific interfaces IWorker (that takes care of the working functionality) and IEater (that takes care of the eating functionality). Therefore, Human and Robot will implement only the methods they need from the corresponding interfaces (say Human will implement IWorker and IEater and Robot will be implementing IWorker only).**
 
 **Then, we will look at another example that deals with two types of doors : Sensing Doors and Timed Doors. Both doors can be opened, closed, locked and unlocked. Furthermore, sensing doors can be opened when sensing the presence of a near person and a timed door can be locked after a certain timedout. Door functionalities are provided by a general-purpose interface Door containg all the above functionalities. So, when the SensingDoor class implements the Door interface, it will have to provide implementation of locking the door after a certain timeout - a method the sensing door does not need-. Same, when the TimedDoor class implements the Door interface, it will have to provide an implementation of opening when sesing the presence of a near person - a method the timed door does not need-.**
+
 **To fix this issue, we segregate the general-purpose interface to multiple client-specific interfaces : Door interface proving the very basic functionalities of any door (say the opening, closing, locking and unlocking functionalities), SensingClient Interface which provides the functionality of opening the door when a person comes near the door and finally, the TimedClient interface which provides the functionality of locking the door after a certain timeout. Now, the SensingDoor and the TimedDoor can implement only the methods they need by implementings the appropriate client-specific inetraces.**
 
 ## Dependency Inversion Principle
