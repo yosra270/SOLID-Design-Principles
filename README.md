@@ -76,11 +76,11 @@ Other benefits may include :
 - Organization – Smaller, well-organized classes are easier to search than monolithic ones.
 
 
-To illustrate the application of this principle, we will be looking at the code of a simple car management program as well as an employee displaying program as examples. 
+**To illustrate the application of this principle, we will be looking at the code of a simple car management program as well as an employee displaying program as examples.**
 
-First, we will be dealing with an employee class that takes care of defining an employee properties as well as converting them to an HTML format. Having more than one job, this class breaks the SRP which leads us to delegate the formatting job to another class say the EmployeeFormatter class.
+**First, we will be dealing with an employee class that takes care of defining an employee properties as well as converting them to an HTML format. Having more than one job, this class breaks the SRP which leads us to delegate the formatting job to another class say the EmployeeFormatter class.**
 
-Then, we will see a car manager class that takes car of retreaving cars data, formatting those data and analyzing them (rating cars). Therefore, we delegated each job to a new class : CarDao for retreaving the data, CarFormatter fro formatting them and CarAnalyzer fro analyzing those data. So, now the only job that is left for the CarManager is to orchestrate what the others classes do by calling their methods.
+**Then, we will see a car manager class that takes car of retreaving cars data, formatting those data and analyzing them (rating cars). Therefore, we delegated each job to a new class : CarDao for retreaving the data, CarFormatter fro formatting them and CarAnalyzer fro analyzing those data. So, now the only job that is left for the CarManager is to orchestrate what the others classes do by calling their methods.**
 
 ## Open Closed Principle
 
@@ -115,6 +115,13 @@ Therefore, when a class does not obey this principle, it leads to some nasty bug
 While this can be a difficult principle to internalize, in a lot of ways it’s simply an extension of open-closed principle, as it’s a way of ensuring that derived classes extend the base class without changing behavior.
 
 Following this principle helps to avoid unexpected consequences of changes and avoids having to open a closed class in order to make changes. It leads to easy extensions of software, and, while it might slow down the development process, following this principle during development can avoid lots of issues during updates and extensions.
+
+**LSP is all about behavior so it is hard to detect the bugs but it is easy to understand it. So, we will be looking at the code of a simple shapes area calculation program as well as a pool and ducks program as examples.**
+
+
+**First, we will be dealing with a Rectangle class that has width and height and calculte its area (= width x height). Next, we will be adding a square class. Since a basic mathematical reasoning would state that a square is a particular form of  rectangle where width equals height, the Square class will extend the Rectangle class and whenever we modify the width or the height we update both of them to the same value. This last property of the square will break the LSP. For example, a rectangle of width 5 and height 4 will have always an area of 20. In the hand, a square of width 5 and height 4 will have an area of 25 or 16 depending on which property we updated last. Which is a weird behavior of the square since it is a rectangle. To fix this issue, we remove the inheritance.**
+
+**Then, we will see a Duck class that always quacks and swims whenever the corresponding methods are called. Next, we add asubclass of the Duck class which is Electronic Duck class that can be Off or On and quacks and swims only when it is on. With that been said, if the electronic duck was off and its quack or swim methods were called, an excpetion will be thrown which is a weird behavior of a Duck since it is expected to always be capable of swimming and quacking. To fix the violation of the LSP, we add an IDuck interface that has the swim and quack methods throwing an exception. In others words, an IDuck can or not swim and quack. Therfore, both Duck and ElenctronicDuck classes will be implementing this interface.**
 
 ## Interface Segregation Principle
 
