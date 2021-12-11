@@ -139,6 +139,14 @@ For software engineers, this means that you don’t want to just start with an e
 
 Similar to the Single Responsibility Principle, the goal of the Interface Segregation Principle is to reduce the side effects and frequency of required changes by splitting the software into multiple, independent parts.
 
+**To illustrate this princple, we will be looking at a simple factory workers program as well as a basic doors management program as examples.**
+
+**First, we will be dealing with a general-purpose interface Worker that provides the methods of working and eating. The available workers in this project are humans and robots. So both Human and Robot classes will be implementing the interface Worker. This means that the Robot will have to provide an implementation for the eat method that it does not need.**
+**To fix this, we apply the ISP by segregating the general-interface Worker into two client-specific interfaces IWorker (that takes care of the working functionality) and IEater (that takes care of the eating functionality). Therefore, Human and Robot will implement only the methods they need from the corresponding interfaces (say Human will implement IWorker and IEater and Robot will be implementing IWorker only).**
+
+**Then, we will look at another example that deals with two types of doors : Sensing Doors and Timed Doors. Both doors can be opened, closed, locked and unlocked. Furthermore, sensing doors can be opened when sensing the presence of a near person and a timed door can be locked after a certain timedout. Door functionalities are provided by a general-purpose interface Door containg all the above functionalities. So, when the SensingDoor class implements the Door interface, it will have to provide implementation of locking the door after a certain timeout - a method the sensing door does not need-. Same, when the TimedDoor class implements the Door interface, it will have to provide an implementation of opening when sesing the presence of a near person - a method the timed door does not need-.**
+**To fix this issue, we segregate the general-purpose interface to multiple client-specific interfaces : Door interface proving the very basic functionalities of any door (say the opening, closing, locking and unlocking functionalities), SensingClient Interface which provides the functionality of opening the door when a person comes near the door and finally, the TimedClient interface which provides the functionality of locking the door after a certain timeout. Now, the SensingDoor and the TimedDoor can implement only the methods they need by implementings the appropriate client-specific inetraces.**
+
 ## Dependency Inversion Principle
 
 This principle offers a way to decouple software modules. Simply put, dependency inversion principle means that :
