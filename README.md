@@ -176,6 +176,6 @@ We want our classes to be open to extension, so we have reorganized our dependen
 
 **To fix this issue, we apply the DIP by adding an interface - say Equipment interface-. Now, both button and lamp would depend on this abstraction.**
 
-**The second example deals with an encoding module which can read data from a file or database, encode this data and then write it down in a destination that is of the same type as the source of the data (file or database). The EncodingModule depends on concrete implementations (BufferedReader, BufferedWriter, InputStreamReader and StringBuilder).**
+**The second example deals with an encoding module which can read data from a file or database, encode this data and then write it down in a destination that is of the same type as the source of the data (file or database). The EncodingModule depends on concrete implementations (BufferedReader, BufferedWriter, InputStreamReader and MyDatabase).**
 
 **After applying the DIP, we added two abstractions (IReader and IWriter interfaces). So now, EncodingModule depends on abstractions ( IReader and IWriter), MyDatabaseWriter and MyFileWriter implement IWriter and MyNetworkReader and MyFileReader implement IReader.**
