@@ -124,3 +124,16 @@ For software engineers, this means that you don’t want to just start with an e
 Similar to the Single Responsibility Principle, the goal of the Interface Segregation Principle is to reduce the side effects and frequency of required changes by splitting the software into multiple, independent parts.
 
 ## Dependency Inversion Principle
+
+This principle offers a way to decouple software modules. Simply put, dependency inversion principle means that :
+
+> High-level modules should not depend on low-level modules. Both should depend on abstractions. Abstractions should not depend on details. Details should depend on abstractions.
+
+The general idea of this principle is as simple as it is important: High-level modules, which provide complex logic, should be easily reusable and unaffected by changes in low-level modules, which provide utility features. To achieve that, you need to introduce an abstraction that decouples the high-level and low-level modules from each other. In other words, classes should depend upon interfaces or abstract classes instead of concrete classes and functions.
+
+One popular way to comply with this principle is through the use of a dependency inversion pattern, although this method is not the only way to do so. Whatever method you choose to utilize, finding a way to utilize this principle will make your code more flexible, agile, and reusable.
+
+The OCP and DIP are related and we have applied this pattern before while we were discussing the Open-Closed Principle.
+"If the OCP states the goal of OO architecture, the DIP states the primary mechanism".
+
+We want our classes to be open to extension, so we have reorganized our dependencies to depend on interfaces instead of concrete classes. 
