@@ -169,3 +169,13 @@ The OCP and DIP are related and we have applied this pattern before while we wer
 "If the OCP states the goal of OO architecture, the DIP states the primary mechanism".
 
 We want our classes to be open to extension, so we have reorganized our dependencies to depend on interfaces instead of concrete classes. 
+
+**To dive even deeper in this principle, we will be looking at 2 simple examples.**
+
+**The first example deals with a Button that can turn on and off a lamp. THis button depend on a concrete implementation (which is the Lamp class), therefore it is hard to extend the project to handle more equipements that we can turn on or off with a button.**
+
+**To fix this issue, we apply the DIP by adding an interface - say Equipment interface-. Now, both button and lamp would depend on this abstraction.**
+
+**The second example deals with an encoding module which can read data from a file or database, encode this data and then write it down in a destination that is of the same type as the source of the data (file or database). The EncodingModule depends on concrete implementations (BufferedReader, BufferedWriter, InputStreamReader and StringBuilder).**
+
+**After applying the DIP, we added two abstractions (IReader and IWriter interfaces). So now, EncodingModule depends on abstractions ( IReader and IWriter), MyDatabaseWriter and MyFileWriter implement IWriter and MyNetworkReader and MyFileReader implement IReader.**
