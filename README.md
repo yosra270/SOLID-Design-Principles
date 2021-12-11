@@ -96,7 +96,13 @@ But since inheritance introduces *tight coupling* if the subclasses depend on im
 
 The main benefit of this approach is that an interface introduces an additional level of abstraction which enables loose coupling. The implementations of an interface are independent of each other and don’t need to share any code. If one consider it beneficial that two implementations of an interface share some code, it would be possible either to use inheritance or composition.
 
-To illustrate the application of this principle, we will be looking at the code of a simple
+**To illustrate the application of this principle, we will be looking at the code of a simple shapes' area calculation and resource allocation programs as examples.**
+
+**First, we will be dealing with an Area Calculator whose job is to calculate the area of shapes. For now, it can only calculate the area of the shapes of types provided in the enum ShapeType. So whenever we need for the project to support new types of shape, we will need to break the code of the ShapeType enum as well as the code of the AreaCalculator class which might result in potential bugs and therefore breaking the application.**
+**To fix the issue of breaking the OCP, we will delegate the job of calculating the area of each shape to the shape itself so all what the AreaCalculator has to do is to call the shape's calculting area method. This way, whenever we want to expand the project to support new shapes types, we won't have to change the existing code, we will just extend it.**
+
+**Then, we will see a Resource Allocator that allocate and free the resources available in ResourceType enum (time slot and space slot). As the previous example, expanding the project to support new resources will result in changing the existing code of the ResourceType enum and the ResourceAllocator class. This might result in potential bugs breaking the application.**
+**To fix this, we apply the OCP principle by delegating the details of allocating and freeing slots to resources themselves. So, all what has the ResourceAllocator to do is to call for the resource methods.**
 
 ## Liskov Substitution Principle
 
