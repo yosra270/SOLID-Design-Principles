@@ -104,18 +104,17 @@ The main benefit of this approach is that an interface introduces an additional 
 **First, we will be dealing with an Area Calculator whose job is to calculate the area of shapes. For now, it can only calculate the area of the shapes of types provided in the enum ShapeType. So whenever we need for the project to support new types of shape, we will need to break the code of the ShapeType enum as well as the code of the AreaCalculator class which might result in potential bugs and therefore breaking the application.**
 
 **To fix the issue of breaking the OCP, we will delegate the job of calculating the area of each shape to the shape itself so all what the AreaCalculator has to do is to call the shape's calculting area method. This way, whenever we want to expand the project to support new shapes types, we won't have to change the existing code, we will just extend it.**
-<p align="center">
-   <img height=500 src="OCP/OCP_example.jpg">
-</p>
 
+![OCP](OCP/OCP_example.svg#gh-dark-mode-only)
+![OCP](OCP/OCP_example_light_mode.svg#gh-light-mode-only)
 
 **Then, we will see a Resource Allocator that allocate and free the resources available in ResourceType enum (time slot and space slot). As the previous example, expanding the project to support new resources will result in changing the existing code of the ResourceType enum and the ResourceAllocator class. This might result in potential bugs breaking the application.**
 
 **To fix this, we apply the OCP principle by delegating the details of allocating and freeing slots to resources themselves. So, all what has the ResourceAllocator to do is to call for the resource methods.**
 
-<p align="center">
-   <img height=500 src="OCP/OCP_exercice.jpg">
-</p>
+
+![OCP](OCP/OCP_exercice.svg#gh-dark-mode-only)
+![OCP](OCP/OCP_exercice_light_mode.svg#gh-light-mode-only)
 
 ## Liskov Substitution Principle
 
@@ -140,17 +139,15 @@ Following this principle helps to avoid unexpected consequences of changes and a
 
 **First, we will be dealing with a Rectangle class that has width and height and calculte its area (= width x height). Next, we will be adding a square class. Since a basic mathematical reasoning would state that a square is a particular form of  rectangle where width equals height, the Square class will extend the Rectangle class and whenever we modify the width or the height we update both of them to the same value. This last property of the square will break the LSP. For example, a rectangle of width 5 and height 4 will have always an area of 20. In the hand, a square of width 5 and height 4 will have an area of 25 or 16 depending on which property we updated last. Which is a weird behavior of the square since it is a rectangle. To fix this issue, we remove the inheritance.**
 
-<p align="center">
-   <img height=500 src="LSP/LSP_example.jpg">
-</p>
+![LSP](LSP/LSP_example.svg#gh-dark-mode-only)
+![LSP](LSP/LSP_example_light_mode.svg#gh-light-mode-only)
 
 **Then, we will see a Duck class that always quacks and swims whenever the corresponding methods are called. Next, we add asubclass of the Duck class which is Electronic Duck class that can be Off or On and quacks and swims only when it is on. With that been said, if the electronic duck was off and its quack or swim methods were called, an excpetion will be thrown which is a weird behavior of a Duck since it is expected to always be capable of swimming and quacking.**
 
 **To fix the violation of the LSP, we add an IDuck interface that has the swim and quack methods throwing an exception. In others words, an IDuck can or not swim and quack. Therfore, both Duck and ElenctronicDuck classes will be implementing this interface.**
 
-<p align="center">
-   <img height=500 src="LSP/LSP_exercice.jpg">
-</p>
+![LSP](LSP/LSP_exercice.svg#gh-dark-mode-only)
+![LSP](LSP/LSP_exercice_light_mode.svg#gh-light-mode-only)
 
 ## Interface Segregation Principle
 
@@ -168,17 +165,16 @@ Similar to the Single Responsibility Principle, the goal of the Interface Segreg
 
 **To fix this, we apply the ISP by segregating the general-interface Worker into two client-specific interfaces IWorker (that takes care of the working functionality) and IEater (that takes care of the eating functionality). Therefore, Human and Robot will implement only the methods they need from the corresponding interfaces (say Human will implement IWorker and IEater and Robot will be implementing IWorker only).**
 
-<p align="center">
-   <img height=500 src="ISP/ISP_example.jpg">
-</p>
+
+![ISP](ISP/ISP_example.svg#gh-dark-mode-only)
+![ISP](ISP/ISP_example_light_mode.svg#gh-light-mode-only)
 
 **Then, we will look at another example that deals with two types of doors : Sensing Doors and Timed Doors. Both doors can be opened, closed, locked and unlocked. Furthermore, sensing doors can be opened when sensing the presence of a near person and a timed door can be locked after a certain timedout. Door functionalities are provided by a general-purpose interface Door containg all the above functionalities. So, when the SensingDoor class implements the Door interface, it will have to provide implementation of locking the door after a certain timeout - a method the sensing door does not need-. Same, when the TimedDoor class implements the Door interface, it will have to provide an implementation of opening when sesing the presence of a near person - a method the timed door does not need-.**
 
 **To fix this issue, we segregate the general-purpose interface to multiple client-specific interfaces : Door interface proving the very basic functionalities of any door (say the opening, closing, locking and unlocking functionalities), SensingClient Interface which provides the functionality of opening the door when a person comes near the door and finally, the TimedClient interface which provides the functionality of locking the door after a certain timeout. Now, the SensingDoor and the TimedDoor can implement only the methods they need by implementings the appropriate client-specific inetraces.**
 
-<p align="center">
-   <img height=500 src="ISP/ISP_exercice.jpg">
-</p>
+![ISP](ISP/ISP_exercice.svg#gh-dark-mode-only)
+![ISP](ISP/ISP_exercice_light_mode.svg#gh-light-mode-only)
 
 ## Dependency Inversion Principle
 
@@ -201,14 +197,14 @@ We want our classes to be open to extension, so we have reorganized our dependen
 
 **To fix this issue, we apply the DIP by adding an interface - say Equipment interface-. Now, both button and lamp would depend on this abstraction.**
 
-<p align="center">
-   <img height=500 src="DIP/DCP_example.jpg">
-</p>
+
+![DIP](DIP/DIP_example.svg#gh-dark-mode-only)
+![DIP](DIP/DIP_example_light_mode.svg#gh-light-mode-only)
 
 **The second example deals with an encoding module which can read data from a file or database, encode this data and then write it down in a destination that is of the same type as the source of the data (file or database). The EncodingModule depends on concrete implementations (BufferedReader, BufferedWriter, InputStreamReader and MyDatabase).**
 
 **After applying the DIP, we added two abstractions (IReader and IWriter interfaces). So now, EncodingModule depends on abstractions ( IReader and IWriter), MyDatabaseWriter and MyFileWriter implement IWriter and MyNetworkReader and MyFileReader implement IReader.**
 
-<p align="center">
-   <img height=500 src="DIP/DCP_exercice.jpg">
-</p>
+
+![DIP](DIP/DIP_exercice.svg#gh-dark-mode-only)
+![DIP](DIP/DIP_exercice_light_mode.svg#gh-light-mode-only)
