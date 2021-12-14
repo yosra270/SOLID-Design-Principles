@@ -83,6 +83,7 @@ Other benefits may include :
 **Then, we will see a car manager class that takes car of retreaving cars data, formatting those data and analyzing them (rating cars). Therefore, we delegated each job to a new class : CarDao for retreaving the data, CarFormatter fro formatting them and CarAnalyzer fro analyzing those data. So, now the only job that is left for the CarManager is to orchestrate what the others classes do by calling their methods.**
 
 ![SRP](SRP/SRP.svg#gh-dark-mode-only)
+![SRP](SRP/SRP_light_mode.svg#gh-light-mode-only)
 
 ## Open Closed Principle
 
