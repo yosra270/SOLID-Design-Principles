@@ -25,7 +25,7 @@ This code implements basic examples of the SOLID object oriented design principl
 
 > "SOLID aims at creating understandable, readable, and testable code that many developers can collaboratively work on."
 <br/>
-  Software may start with a clean and elegant design but over time they become hard to maintain, often requiring costly redesigns. Robert Martin, who's credited with writing down the SOLID principles, points out some symptoms of rotting design due to improperly managed dependencies across modules:
+  Software may start with a clean and elegant design but over time they become hard to maintain, often requiring costly redesigns. Robert Martin, who's credited with writing down the **SOLID principles**, points out some symptoms of rotting design due to improperly managed dependencies across modules:
 
 - *Rigidity*: Implementing even a small change is difficult since it's likely to translate into a cascade of changes.
 - *Fragility*: Any change tends to break the software in many places, even in areas not conceptually related to the change.
